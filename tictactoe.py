@@ -54,7 +54,14 @@ def board_display(list_board, dict_board_position, dict_board_grid):
 
 #1 GET USER INPUT
 def get_input(player):
-	user_input = int((input('Player %s enter number corresponding to where you want to place your move:' %player)))
+	while True:
+		try:
+			user_input = int((input('Player %s enter number corresponding to where you want to place your move:' %player)))
+		except:
+			print('Invalid entry. Integer inputs only!')
+		else:
+			break
+
 	return user_input
 
 #2.1 CHECK USER INPUT FOR 1 THROUGH 9 ONLY
